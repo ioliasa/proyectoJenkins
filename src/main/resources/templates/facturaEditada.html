@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/style.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+	integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+	integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+	crossorigin="anonymous"></script>
+</head>
+
+<style>
+i {
+	width: 30px;
+	height: auto;
+	color: rgb(255, 0, 0);
+}
+</style>
+
+<body>
+	<div class="container">
+
+		<!-- Boton de logout -->
+		<div class="d-flex justify-content-end p-4">
+			<a th:href="@{/inicio/logout}" class="btn btn-danger">Logout</a>
+		</div>
+		
+		<!-- ##### Creamos el boton de finalizar el pedido -->
+		<form th:action="@{/inicio/verPedidos}">
+		<div class="d-flex justify-content-end">
+					<button type="submit" name="pagar" value="pagar"
+						class="btn btn-primary mt-5">Finalizar modificación</button>
+				</div>
+		</form>
+
+		<div class="d-flex flex-row"
+			style="background-color: rgba(255, 226, 145, 0.603);">
+
+
+			<div class="mt-4 w-100">
+				<div class="row w-100 ">
+				
+					<div class="p-5 col-6">
+						<div class="d-flex"><i class="bi bi-file-person-fill"></i>
+						<h4>INFORMACIÓN COMPRADOR</h4></div>
+						<div class="row p-4 text-white" style="background-color: yellowgreen; border-radius: 15px">
+							<div class="col-4">
+								<h5>Nombre </h5>
+								<h5>Dirección</h5>
+								<h5>Teléfono </h5>
+								<h5>Email </h5>
+							</div>
+							<div class="col-8">
+							<h5 th:text="${usuario.getNombre() }"></h5>
+								<h5 th:text="${pedido.getDireccion() }"></h5>
+								<h5 th:text="${pedido.getTelefono() }"></h5>
+								<h5 th:text="${pedido.getEmail() }"></h5> 
+								
+							</div>
+						</div>
+					</div>
+					<div class="p-5 col-6">
+						<div class="d-flex"><i class="bi bi-credit-card"></i>
+						<h4>MÉTODO DE PAGO</h4></div>
+						<div class="row p-4 text-white" style="background-color: blue; border-radius: 15px">
+							<div class="col-4">
+								<h5>Pago</h5>
+								<h5>Envío</h5>
+							</div>
+							<div class="col-8">
+								<h5 th:text="${pedido.getMetodoPago() }"></h5>
+								<h5 th:if="${pedido.getCosteEnvio() == 0 }">Envío 3-5 días (SEUR) </h5>
+								<h5 th:if="${pedido.getCosteEnvio() == 2.99 }">Envío 1-3 días (GLS) </h5>
+								<h5 th:if="${pedido.getCosteEnvio() == 4.99 }">Envío 24 horas (CORREO EXPRESS) </h5>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+
+
+				<div class="d-flex p-5">
+					<i class="bi bi-cart4"></i>
+					<h4>FACTURA</h4>
+				</div>
+
+				<div class="row mb-4">
+					<div class="col colAlineadoCentro"></div>
+
+					<div class="col colAlineadoCentro">
+						<h6>
+							<b>Descripción</b>
+						</h6>
+					</div>
+					<div class="col colAlineadoCentro">
+						<h6>
+							<b>Precio unitario</b>
+						</h6>
+					</div>
+					<div class="col colAlineadoCentro">
+						<h6>
+							<b>Cantidad</b>
+						</h6>
+					</div>
+					<div class="col colAlineadoCentro">
+						<h6>
+							<b>Precio total</b>
+						</h6>
+					</div>
+
+				</div>
+				<div th:each="lineaPedido: ${pedido.lineasPedidos}">
+					<div class="row mb-4">
+						<div class="col colAlineadoCentro">
+							<img class="imagenPedido" th:src="${lineaPedido.producto.getImagen() }">
+						</div>
+						<div class="col">
+							<h5 class="card-title" th:text="${lineaPedido.producto.getNombre() }"></h5>
+							<p class="card-text" th:text="${ lineaPedido.producto.getDescripcion() }"></p>
+						</div>
+						<div class="col colAlineadoCentro">
+							<p th:text="${lineaPedido.producto.getPrecio() }">€</p>
+						</div>
+						<div class="col colAlineadoCentro">
+							<p class="card-text" th:text="${ lineaPedido.getCantidad() }">
+								uds</p>
+						</div>
+						<div class="col colAlineadoCentro">
+							<p class="card-text" th:text="${ lineaPedido.getImporteTotal() }">
+								€</p>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="row mb-4">
+					<div class="col"></div>
+					<div class="col" /></div>
+					<div class="col" /></div>
+					<div class="col colAlineadoCentro">
+						<p class="card-text">
+							<strong>Total sin IVA</strong>
+						</p>
+					</div>
+					<div class="col colAlineadoCentro">
+						<p class="card-text" th:text="${ pedido.getImporte()}">€</p>
+					</div>
+				</div>
+				<div class="row mb-4">
+					<div class="col"></div>
+					<div class="col" /></div>
+					<div class="col" /></div>
+					<div class="col colAlineadoCentro">
+						<p class="card-text">
+							<strong>IVA</strong>
+						</p>
+					</div>
+					<div class="col colAlineadoCentro">
+						<p class="card-text" th:text="${ pedido.getIva()}">€</p>
+					</div>
+				</div>
+				<div class="row mb-4">
+					<div class="col"></div>
+					<div class="col" /></div>
+					<div class="col" /></div>
+					<div class="col colAlineadoCentro">
+						<p class="card-text">
+							<strong>Total con IVA</strong>
+						</p>
+					</div>
+					<div class="col colAlineadoCentro">
+						<p class="card-text" th:text="${ pedido.getTotalConIva()}">€</p>
+					</div>
+				</div>
+				<div class="row mb-4">
+					<div class="col"></div>
+					<div class="col" /></div>
+					<div class="col" /></div>
+					<div class="col colAlineadoCentro">
+						<p class="card-text">
+							<strong>Envío</strong>
+						</p>
+					</div>
+					<div class="col colAlineadoCentro">
+						<p class="card-text" th:text="${ pedido.getCosteEnvio()}">€</p>
+					</div>
+				</div>
+				<div class="row mb-4">
+					<div class="col"></div>
+					<div class="col" /></div>
+					<div class="col" /></div>
+					<div class="col colAlineadoCentro"
+						style="border-top: 2px solid black;">
+						<p class="card-text">
+							<strong>Total Factura</strong>
+						</p>
+					</div>
+					<div class="col colAlineadoCentro"
+						style="border-top: 2px solid black;">
+						<p class="card-text" th:text="${ pedido.getImporteTotal}">€</p>
+					</div>
+				</div>
+
+
+
+			</div>
+
+
+		</div>
+	</div>
+
+</body>
+</html>

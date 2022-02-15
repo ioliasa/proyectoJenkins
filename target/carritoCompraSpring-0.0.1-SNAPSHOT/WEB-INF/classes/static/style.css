@@ -1,0 +1,458 @@
+#general img {height: 200px; }
+h1{text-align: center; margin-top: -30px; margin-bottom: 50px}
+body{background: #eeeeee;}
+#general {margin-left: auto; margin-right: auto; width: 78%; margin-top: 120px;}
+
+#cuadro{background: white; width: 420px;  border-radius: 10px;  float: right; text-align: center; border:1px solid #dddddd; box-shadow: 0px 0px 30px #cdcdcd}
+.entrar{background: #414141; border-radius: 8px; border:0; color: white; font-size: 20px; font-weight: bold;}
+.entrar:hover{background: #2b2b2b}
+
+#cuadro input {width: 87%; margin-top: 13px; height: 50px;}
+
+#titulo{float: left; margin-top: 40px; width: 560px;}
+#titulo p{font-size: 29px; font-family: arial;}
+.olvidoPass{font-size: 14px; color: #0583d6; text-decoration: none;}
+.olvidoPass:hover{text-decoration: underline }
+#bienvenida p{text-align: center}
+#botonFalso p {background: #4eca2d; width: 50%; margin-left: auto; margin-right: auto; padding: 15px; 
+	border-radius: 6px; color: white;font-weight: bold; margin-top: 30px; margin-bottom: 30px;}
+#botonFalso p:hover{background: #0dba0f}
+
+#botonFalso{border-top: 1px solid #dddddd; width: 90%; margin-right: auto; margin-left: auto;}
+#debajoDelCuadro p{ width: 390px; float: right; clear: both; margin-right: 12%; text-align: center; font-size: 15px; margin-bottom: 200px;}
+#footer{ background: white; clear: both; padding-top: 10px;}
+#footer p{color: #b6b6b6; font-size: 13px; text-align: center; width: 90%; margin-right: auto; margin-left: auto;}
+.conLinea{border-bottom: 1px solid #dddddd;}
+
+
+.AtrasBienvenido{width: 600px; background: red}
+#recuperarContrasena{border:1px solid black; border-radius: 8px;box-shadow: 0px 0px 5px black; padding: 40px; margin-bottom: 50px;}
+#recuperarContrasena a{background: #0583d6; padding: 10px; color: white; text-decoration: none; font-weight: bold; margin-left: 200px; border-radius: 5px;}
+#recuperarContrasena a:hover{background: #0dba0f}
+#recuperarContrasena p{text-align: center; font-size: 25px; margin-bottom: 50px;}
+.datosErroneos{color:red}
+.imagenCatalogo{width: 200px; height: 150px; margin-left: auto; margin-right: auto;}
+.container{width: 80%; background: #eeeeee}
+.imagenPedido{width: 100px}
+.colAlineadoCentro{text-align: center}
+
+
+
+/* Estilos para el header y footer */
+
+
+html{
+    position: relative
+    
+}
+body{
+    margin-top: 50px;
+    margin-bottom: 300px;
+}
+    /* Header */
+    .header{
+        background: #333;
+        height: 80px;
+        color: white;
+    
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+    }
+    
+    .header a{
+        color: white;
+    }
+    
+    div .logo{
+        text-decoration: none;
+        float: left;
+        position: absolute;
+        left: 15%;
+        width: 100px;
+    }
+
+   
+    
+
+    .logo, .enlaceLogo{
+        overflow: hidden;
+        display: block;
+        height: 100%;
+    }
+    .enlaceLogo img{
+        width: 100px;
+        height: 75px;
+    }
+    
+    
+    /* Meterle algún efecto al logo */
+    
+    
+    
+    /* Menu de navegacion */
+    .menuNavegacion{
+        float: right;
+        clear: none;
+        position: absolute;
+        line-height: 30px;
+        height: 100%;
+        margin: 0;
+        right: 15%;
+    }
+    
+    .menuNavegacion ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        padding-right: 20px;
+        display: flex;
+    }
+    
+    .menuNavegacion ul li{
+        display: inline-block;
+        line-height: 80px;
+    }
+    
+    .menuNavegacion ul li a{
+        display: block;
+        padding: 0 18px;
+        text-decoration: none;
+    }
+    
+    .menuNavegacion ul li a:hover{
+        background: rgba(255, 255, 255, 0.384);
+    }
+
+    .indicadorPaginaHome{
+       color: white;
+       font-size: 50px;
+       position: absolute;
+       margin-top: -79px;
+       margin-left: 18px;
+    }
+    .indicadorPaginaMenu{
+        color: white;
+       font-size: 50px;
+       position: absolute;
+       margin-top: -79px;
+       margin-left: 18px;
+    }
+    .indicadorPaginaGaleria{
+        color: white;
+        font-size: 50px;
+        position: absolute;
+        margin-top: -79px;
+        margin-left: 40px;
+    }
+
+    .indicadorPaginaReserva{
+        color: white;
+        font-size: 50px;
+        position: absolute;
+        margin-top: -79px;
+        margin-left: 25px;
+    }
+    .indicadorPaginaContacto{
+        color: white;
+        font-size: 50px;
+        position: absolute;
+        margin-top: -79px;
+        margin-left: 27px;
+    }
+    
+    
+    
+    
+    /* :::::::Footer::::::: */
+    
+    
+    .pie-pagina{
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        overflow: hidden;
+        position: absolute;
+        margin: 0px;
+        background-color: #333;
+    }
+    
+    .pie-pagina .grupo-1{
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 50px;
+        padding: 45px 0px;
+        margin-top: -30px;
+    }
+    
+    .pie-pagina .grupo-1 .box figure{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+       
+    }
+    
+    .pie-pagina .grupo-1 .box figure img{
+        width: 200px;
+        margin-top: -30px;
+    }
+    .pie-pagina .grupo-1 .box figure img:hover{
+        transform: skew(-10deg);
+}
+    
+    
+    
+    .pie-pagina .grupo-1 .box h2{
+        color: white;
+        margin-bottom: 25px;
+        font-size: 20px;
+    }
+    
+    .pie-pagina .grupo-1 .box p{
+        color: #efefef;
+        margin-bottom: 10px;
+    }
+    
+    .pie-pagina .grupo-1 .red-social a{
+        display: inline-block;
+        text-decoration: none;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        color: white;
+        margin-right: 10px;
+        background: rgb(75, 75, 75);
+        text-align: center;
+    }
+
+    .sobreNosotros ul{
+        list-style: none;
+        padding-left: 0;
+    }
+
+  
+    .sobreNosotros ul li a{
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        margin-left: 30px;
+    }
+
+    .sobreNosotros ul li a:hover{
+        color: rgb(63, 10, 10);
+    }
+    
+    .pie-pagina .grupo-1 .red-social a:hover{
+        color: rgb(63, 10, 10);;
+    }
+    
+    .pie-pagina .grupo-2{
+        background: rgb(75, 75, 75);
+        padding: 15px 10px;
+        color: white;
+        text-align: center;
+        margin-top: -10px;
+    }
+
+    #botonMenu, .menuDesplegable, .labelBoton{
+        display: none;
+    }
+
+
+
+/* -------Footer y Header para tablet--------- */
+
+@media screen and (min-width: 451px) and (max-width:850px){
+    body{
+        margin-top: 80px;
+        margin-bottom: 600px;
+    }
+
+    #botonMenu{
+        display: none;
+    }
+
+    /* Cuando el boton esté chekeado nos buscara a la clase menu */
+    #botonMenu:checked ~ .menuNavegacion{
+        margin-right: -25%;
+    }
+
+    .labelBoton{
+        display: block;
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        position: absolute;
+        right: 50px;
+        border-left: 1px solid rgba(255, 255, 255, 0.384);
+        margin-top: 15px;
+    }
+
+    .labelBoton:hover{
+        display: block;
+        cursor: pointer;
+        
+    }
+
+    /* Mostramos el menu desplegable */
+    .menuNavegacion{
+        display: block;
+        position: absolute;
+        margin-right: -90%;
+        margin-top: 80px;
+        width: 70%;
+        transition: all 1s;
+        
+}
+
+    
+
+    /* Ocultamos el menu visible */
+    .menuNavegacion ul{
+        display: block;
+        flex-direction: column;
+        background-color: #333;
+        border: 1px solid rgba(255, 255, 255, 0.384);
+        
+    }
+
+    .menuNavegacion li{  
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        padding: 20px 0px;
+        
+        
+    }
+
+    .pie-pagina .grupo-2{
+        margin-top: 0px;
+    }
+
+    .pie-pagina .grupo-1 .box figure img{
+        width: 200px;
+        margin-top: 30px;
+        margin-bottom: 0px;
+    }
+
+    .pie-pagina .grupo-1 .box figure{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+       
+    }
+
+    .box{
+        text-align: center;
+    }
+}
+/* -------Footer y Header para movil--------- */
+
+@media screen and (max-width: 450px){
+    body{
+        margin-top: 80px;
+        margin-bottom: 600px;
+    }
+
+    #botonMenu{
+        display: none;
+    }
+
+    /* Cuando el boton esté chekeado nos buscara a la clase menu */
+    #botonMenu:checked ~ .menuNavegacion{
+        margin-right: -15%;
+    }
+
+    .labelBoton{
+        display: block;
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        position: absolute;
+        right: 50px;
+        border-left: 1px solid rgba(255, 255, 255, 0.384);
+        margin-top: 15px;
+    }
+
+    .labelBoton:hover{
+        display: block;
+        cursor: pointer;
+        
+    }
+
+    /* Mostramos el menu desplegable */
+    .menuNavegacion{
+        display: block;
+        position: absolute;
+        margin-right: -90%;
+        margin-top: 80px;
+        width: 70%;
+        transition: all 1s;
+        
+}
+
+    
+
+    /* Ocultamos el menu visible */
+    .menuNavegacion ul{
+        display: block;
+        flex-direction: column;
+        background-color: #333;
+        border: 1px solid rgba(255, 255, 255, 0.384);
+        
+    }
+
+    .menuNavegacion li{  
+        width: 100%;
+        margin-left: 20px;
+    }
+    
+
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 10px;
+        padding: 20px 0px;
+        
+        
+    }
+
+    .pie-pagina .grupo-2{
+        margin-top: 0px;
+    }
+
+    .pie-pagina .grupo-1 .box figure img{
+        width: 200px;
+        margin-top: 30px;
+        margin-bottom: 0px;
+    }
+
+    .pie-pagina .grupo-1 .box figure{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+       
+    }
+}
+
+
+@media screen and (max-width: 850px){}
+
+
